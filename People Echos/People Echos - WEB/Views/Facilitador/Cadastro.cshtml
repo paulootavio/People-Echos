@@ -1,0 +1,195 @@
+﻿@model List<HQ_Echos___WEB.Viewmodels.ViewModelQuestao>
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary()
+<div data-ng-app="angularFormApp">
+
+    <div class="col-sm-12" style="padding-left: 0; padding-right: 0;">
+        <img src="../../Images/box/People_Echos_Banners_Facilitador.png" class="banner-cadastro" />
+    </div>
+    <div class="container">
+        <div class="col-sm-12 text-center">   
+                <h1 style="color: #E04600;">Formulário para Facilitadores</h1>       
+        </div>
+
+        <div>
+            <p><b>É seu papel como facilitador manter o propósito e a essência da Escola Design Thinking, além de auxiliar no processo de aprendizagem das pessoas. Todo curso da Escola tem um caráter inovador muito marcante, e isso pode causar um certo desconforto e confusão nas pessoas que participam do curso. Seu papel é ajudá-los a navegar nesse caos e manter todos conectados com o propósito do curso.</b></p>
+            <p>Toda facilitação é diferente de outra. A escolha dos facilitadores para cada curso (ou momento do curso) depende das necessidades identificadas por background e perfil. Para ser facilitador da Escola Design Thinking é imprescindível ter conhecimentos profundos e vivência prática em projetos de Design Thinking, e dos demais temas de cursos, além de ter feito os cursos da Escola relacionados a sua área de interesse e expertise.</p>
+            <p>
+                Continua interessado??<br />
+                Então preencha esse formulário para nos conhecermos melhor. ;)
+            </p>
+        </div>
+
+
+        <div class="bs-example" ng-controller="efcontroller">
+           
+            <form data-ng-submit="submit()" method="post" ng-show="loadForm">
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você quer trabalhar como facilitador na Escola Design Thinking? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Como isso dialoga com seus objetivos de carreira e de vida?</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao26.Resposta">{{Questao26.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Como você se descreveria como facilitador e qual a sua experiência como facilitador? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao27.Resposta">{{Questao27.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Para você quais são as atitudes e características de um bom facilitador? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao28.Resposta">{{Questao28.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você se identifica com a nossa cultura? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Imaginamos que você conheça um pouco do Grupo Echos, quais traços do Grupo e da nossa cultura te chamam mais atenção.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao29.Resposta">{{Questao29.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Você já fez algum curso da Escola Design Thinking? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao30.Resposta">{{Questao30.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label>Se você respondeu sim na resposta anterior qual (ou quais) curso(s) você fez conosco?</label>
+                    <div data-ng-repeat="questaoEDT in questaoCursosEDT track by questaoEDT.perguntaCheckId">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="questaoEDT.selecionado">{{questaoEDT.textoResposta}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label>Qual curso da Escola você gostaria de facilitar? *</label>
+                    <div data-ng-repeat="questaoAplicar in questaoAplicarEDT track by questaoAplicar.perguntaCheckId">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="questaoAplicar.selecionado">{{questaoAplicar.textoResposta}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12">
+                    <label>
+                        Em quais das áreas abaixo você possui experiência e skills comprovados
+                        <br />
+                        (ou seja, já desenvolveu algo ou trabalhou com o tema)? *</label>
+                    <p>Fique a vontade para escolher mais de uma. =)</p>
+                    <div data-ng-repeat="area in questaoAreas track by area.perguntaCheckId">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="area.selecionado">{{area.textoResposta}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">E em quais áreas você é um curioso profissional? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Na pergunta anterior você elencou o que você já trabalhou, nessa elenque aquelas em que você tem muito interesse e pesquisa muito sobre.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao34.Resposta">{{Questao34.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Sua Formação Acadêmica *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Graduação em diante</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao35.Resposta">{{Questao35.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Cursos e Certificados complementares</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Coloque um por linha por favor.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao36.Resposta">{{Questao36.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Quais foram suas 3 últimas experiências profissionais (incluindo atual, se houver)? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Por favor, coloque os cargos ou posições em bullet points e uma breve explicação abaixo de cada uma dessas posições.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao37.Resposta">{{Questao37.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-inline col-xs-12">
+                    <label>Disponibilidade para Viagens? *</label>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao38.Resposta" value="Sim">
+                            Sim
+                        </label>
+                    </div>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao38.Resposta" value="Nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10" style="text-align: right;">
+                        <button type="submit" class="btn " style="background-color:orange !important; color:white !important;">Salvar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    input {
+        height: 15px;
+        width: 50%;
+        margin-bottom: 0px !important;
+    }
+</style>
+
+
+
+<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<script src="~/app/Facilitador/FormApp.js"></script>
+<script src="~/app/Facilitador/efService.js"></script>
+<script src="~/app/Facilitador/efController.js"></script>

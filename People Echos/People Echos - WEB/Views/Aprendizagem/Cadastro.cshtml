@@ -1,0 +1,231 @@
+﻿@model List<HQ_Echos___WEB.Viewmodels.ViewModelQuestao>
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary()
+
+<div data-ng-app="angularFormApp">
+    <div class="col-sm-12" style="padding-left: 0; padding-right: 0;">
+        <img src="../../Images/box/People_Echos_Banners_Articulador.png" class="banner-cadastro" />
+    </div>
+    <div class="container">
+        <div class="col-sm-12 text-center">
+            <h1 style="color: #E04600;">Formulário para Articuladores de Aprendizagem</h1>
+        </div>
+
+        <div>
+            <p>
+                <b>O Articulador de Aprendizagem é aquele que quer trazer uma nova jornada de aprendizagem para a Escola Design Thinking.
+Esse papel é para um conector e ativador, que propõe novas jornadas para a Escola Design Thinking, além de construir e liderar o próprio modelo gerado.
+                </b>
+            </p>
+
+            <p>
+                Sua jornada de aprendizagem deve manter o propósito e a essência da Escola Design Thinking, além de permitir e capa-
+citar as pessoas em uma experiência.
+            </p>
+            <p>
+                Nosso objetivo com a Escola Design Thinking é formar a nova geração de inovadores do Brasil e do Mundo, por isso temas/experiências ligados a Inovação, Empreendedorismo, Design, Tecnologia, Sustentabilidade, Modelos de Negócios, Inovação Social, Capitalismo Consciente, Evolução de Consciência são sempre bem vindos.
+Você também pode sugerir novos segmentos que achar importante!
+            </p>
+            <p>
+                FORMATO
+Nossa diretriz é sempre baseada no “Learn by Doing”, ou seja, aprender fazendo, então temos uma regra: de 20 a 40% de fala e de 80 a 60% de prática!
+Dividimos nossos programas em cursos de imersão (acima de 45 horas) e os cursos compactos, (abaixo de 45 horas). Gostamos muito de testar os temas e cursos em formatos curtos como os de 1 noite, 1 dia, 1 final de semana, 2 ou 4 noites, mas você pode sugerir e adaptar ao seu modelo.
+
+            </p>
+            <p>
+                DIVULGAÇÃO:
+A Escola se responsabiliza pela divulgação do programa. Iremos co-criar uma estratégia de lançamento e discutiremos um número mínimo de participantes para que o curso aconteça.
+            </p>
+            <p>
+                PARCERIA ESCOLA DESIGN THINKING: 
+Para se tornar um articulador de aprendizagem da Escola você deve nos enviar a sua proposta de projeto para aprovação, preenchendo o formulário.
+
+Se a sua proposta de projeto for aceita, iremos co-criar a sua jornada de aprendizagem junto com você para criar a melhor experiência para os participantes!
+            </p>
+        </div>
+        <div class="bs-example" ng-controller="efcontroller">
+       
+            <form data-ng-submit="submit()" method="post" ng-show="loadForm">
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você se identifica com a nossa cultura? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Imaginamos que você conheça um pouco do Grupo Echos, quais traços do Grupo e da nossa cultura te chamam mais atenção.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao39.Resposta">{{Questao39.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Qual o nome da Jornada de Aprendizagem que você gostaria de trazer para a Escola? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao40.Resposta">{{Questao40.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você entende que seu tema tem aderência com a Escola Design Thinking? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao41.Resposta">{{Questao41.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Descreva conceitualmente o tema da Jornada *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Por favor detalhe as linhas centrais do programa, nos envie imagens, gráficos e desenhos explicativos</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao42.Resposta">{{Questao42.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Qual a sua experiência em relação a essa jornada? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Por favor, descreva detalhadamente sua experiência com o tema</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao43.Resposta">{{Questao43.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Como o programa vai funcionar? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Qual o formato - dias da semana e horários, Conteúdo a ser passado em cada dia, Dinâmicas, Experiências Práticas e etc.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao44.Resposta">{{Questao44.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Número mínimo de participantes *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao45.Resposta">{{Questao45.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Custos do programa e valor final para participante *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao46.Resposta">{{Questao46.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-inline col-xs-12">
+                    <label>Você já fez algum curso da Escola Design Thinking?</label>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao47.Resposta" value="Sim">
+                            Sim
+                        </label>
+                    </div>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao47.Resposta" value="Nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label>Se você respondeu sim na resposta anterior qual (ou quais) curso(s) você fez conosco?</label>
+                    <div data-ng-repeat="questaoEDT in questaoCursosEDT track by questaoEDT.perguntaCheckId">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="questaoEDT.selecionado">{{questaoEDT.textoResposta}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Sua Formação Acadêmica *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Graduação em diante</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao49.Resposta">{{Questao49.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Cursos e Certificados complementares</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Coloque um por linha por favor..</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao50.Resposta">{{Questao50.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Quais foram suas 3 últimas experiências profissionais (incluindo atual, se houver)? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Por favor, coloque os cargos ou posições em bullet points e uma breve explicação abaixo de cada uma dessas posições.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao51.Resposta">{{Questao51.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10" style="text-align: right;">
+                        <button type="submit" class="btn " style="background-color:orange !important; color:white !important;" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+                <div class="form-inline col-xs-12">
+                    <label>Disponibilidade para Viagens? *</label>
+                    <br />
+                    <div class="col-xs-12 ">
+                        <p class="">Você poderia eventualmente levar este curso para outras cidades?</p>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao52.Resposta" value="Sim">
+                            Sim
+                        </label>
+
+                    </div>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao52.Resposta" value="Nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    input {
+    height:15px;
+    width:50%;
+    margin-bottom:0px !important;
+}
+</style>  
+<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<script src="~/app/Aprendizagem/FormApp.js"></script>
+<script src="~/app/Aprendizagem/efService.js"></script>
+<script src="~/app/Aprendizagem/efController.js"></script>

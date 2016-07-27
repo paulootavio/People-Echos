@@ -1,0 +1,65 @@
+﻿@model HQ_Echos___WEB.Models.RegisterModel
+
+<div class="auth-style" style="height:700px;">
+
+    @using (Html.BeginForm())
+      {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <div class="container-fluid">
+            <div class="col-sm-offset-3 col-sm-6 text-center box-selecione">
+          
+            <div class="col-sm-offset-3 col-sm-6 text-center box-selecione" style="margin-bottom: 15px;">
+                <h1 style="font-size: 18px"><h3><b>Cadastre-se</b></h3></h1>
+            </div>
+
+            <div class="col-sm-12">
+
+                @Html.TextBoxFor(m => m.UserName, new { @placeholder = "E-mail"})
+
+            </div>
+            <div class="col-sm-12">
+                @Html.PasswordFor(m => m.Password, new { @placeholder = "SENHA" })
+            </div>
+
+            <div class="col-sm-12">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "CONFIRMAR SENHA" })
+            </div>
+
+                 <div class="col-sm-12">
+               <input type="submit" value="Registrar" />
+            </div>
+           
+                 </div>
+        </div>
+    
+    
+@*
+    <fieldset>
+        <legend>Cadastre-se</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </li>
+        </ol>
+        <input type="submit" value="Registrar" />
+    </fieldset>*@
+}
+
+</div>
+
+<style>
+    .auth-style {
+        background-image: url("../Images/box/background.png");
+    }
+</style>

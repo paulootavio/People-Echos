@@ -1,0 +1,317 @@
+﻿@model List<HQ_Echos___WEB.Viewmodels.ViewModelQuestao>
+@Html.AntiForgeryToken()
+
+<div data-ng-app="angularFormApp" style="background-color: white;">
+
+    <div class="col-sm-12" style="padding-left:0;padding-right:0;">
+        <img src="../../Images/box/People_Echos_Banners_Consultor.png" class="banner-cadastro" />
+    </div>
+
+    <div class="bs-example" ng-controller="efcontroller" class="container-fluid">
+        <div class="container">
+            <div class="col-sm-12" style="margin:15px;">
+                <div class="col-sm-12 text-center">
+                    <h1 style="color:#E04600;">Formulário para Consultores Externos</h1>
+                </div>
+                <div class="col-sm-12">
+                    <p>
+                        <b>O consultor é o designer do invisível, o co-criador de soluções para projetos específicos da Design Echos.</b>
+                    </p>
+                    <p>
+                        Nosso modelo de consultoria se baseia num processo que utiliza uma visão sistêmica baseada em diferentes disciplinas e pontos de vista, como a inteligência coletiva, a inovação aberta, o design thinking e a ciência das redes. Essa lógica que se baseia nos conhecimentos e na inteligência distribuída, nos ajuda a analisar um sistema profundo e complexo para projetar soluções que façam sentido na vida das pessoas e nos negócios.
+
+                        A Design Echos acredita que quando desenhamos um projeto, estamos sempre criando COM e não PARA alguém.
+
+                        Concorda com a gente?
+                        Então preencha esse formulário para nos conhecermos melhor. ;)
+                    </p>
+                </div>
+                <form data-ng-submit="submit()" method="post" ng-show="loadForm" style="background-color: white;">
+
+                    <div class="form-inline">
+                        <label>Em grupo, você se sente mais confortável agindo como líder ou como colaborador? </label>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao1.Resposta" value="Lider">
+                                Lider
+                            </label>
+
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao1.Resposta" value="Colaborador">
+                                Colaborador
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-inline">
+                        <label>Você se considera mais introvertido ou extrovertido?</label>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao3.Resposta" value="Introvertido">
+                                Introvertido
+                            </label>
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao3.Resposta" value="Extrovertido">
+                                Extrovertido
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputCidade33" class="control-label col-xs-5">Como você definiria "sucesso" na sua vida?</label>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" ng-model="Questao15.Resposta" rows="5" >{{Questao15.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label">Por que você quer trabalhar como consultor na Design Echos?</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Como isso dialoga com seus objetivos de carreira e de vida?</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" name="userFirstName" ng-model="Questao16.Resposta" >{{Questao16.Resposta}}</textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label right">Por que você se identifica com a nossa cultura?</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Imaginamos que você conheça um pouco do Grupo Echos, quais traços do Grupo e da nossa cultura te chamam mais atenção.</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao17.Resposta">{{Questao17.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-inline col-xs-12">
+                        <label>Você já fez algum curso da Escola Design Thinking?</label>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao4.Resposta" value="Sim">
+                                Sim
+                            </label>
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao4.Resposta" value="Nao">
+                                Nao
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label>Se você respondeu sim na resposta anterior qual (ou quais) curso(s) você fez conosco?</label>
+                        <div data-ng-repeat="questaoEDT in questaoCursosEDT track by questaoEDT.perguntaCheckId">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="true" ng-model="questaoEDT.selecionado">{{questaoEDT.textoResposta}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label class="control-label ">O que significa inovação para você?</label>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao12.Resposta">{{Questao12.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label ">Liste até 3 projetos de Inovação mais relevantes que você já participou? Qual foi sua função e entregáveis em cada um desses?</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Por favor elenque os projetos em bullet points e descreva-os em 1 parágrafo (não esqueça de colocar o link de cada um dos projetos se houver)</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao5.Resposta">{{Questao5.Resposta}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label>Em quais das áreas abaixo você possui experiência e skills comprovados (ou seja, já desenvolveu algo ou trabalhou com o tema)?</label>
+                        <p>Fique a vontade para escolher mais de uma. =)</p>
+                        <div data-ng-repeat="questaoTema in questaoSkillTema track by questaoTema.perguntaCheckId">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="questaoTema.selecionado">{{questaoTema.textoResposta}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label ">E em quais áreas você é um curioso profissional?</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Na pergunta anterior você elencou o que você já trabalhou, nessa elenque aquelas em que você tem muito interesse e pesquisa muito sobre.</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao6.Resposta">{{Questao6.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label ">Sua Formação Acadêmica</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Graduação em diante</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao7.Resposta">{{Questao7.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label ">Cursos e Certificados complementares</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Coloque um por linha por favor.</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao8.Resposta">{{Questao8.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-inline col-xs-12">
+                        <label>Atualmente tem vinculo empregatício?</label>
+                        <br />
+                        <div class="radio">
+
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao9.Resposta" value="sim">
+                                Sim
+                            </label>
+
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" ng-model="Questao9.Resposta" value="Nao">
+                                Não
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-xs-12">
+                        <div class="col-xs-12 ">
+                            <label for="inputCidade33" class="control-label ">Quais foram suas 3 últimas experiências profissionais (incluindo atual, se houver)?</label>
+                        </div>
+                        <div class="col-xs-12 ">
+                            <p class="">Por favor, coloque os cargos ou posições em bullet points e uma breve explicação abaixo de cada uma dessas posições.</p>
+                        </div>
+                        <div class="col-xs-10">
+                            <textarea class="form-control" rows="3" ng-model="Questao8.Resposta">{{Questao10.Resposta}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-inline col-xs-12">
+                        <label>Disponibilidade de horas para trabalhar em um projeto</label>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao10.Resposta" value="40">
+                                40h
+                            </label>
+
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao11.Resposta" value="20">
+                                20h
+                            </label>
+                        </div>
+                        <br />
+                        <div class="radio">
+
+                            <label>
+                                <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao11.Resposta" value="10">
+                                10h
+                            </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-inline col-xs-12">
+                        <label>Disponibilidade para Viagens?</label>
+                        <br />
+                        <div class="radio">
+
+                            <label>
+                                <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao22.Resposta" value="Sim">
+                                Sim
+                            </label>
+
+                        </div>
+                        <br />
+                        <div class="radio">
+                            <label>
+                                <input type="radio" style="width: 15px !important;" name="optionsRadios" ng-model="Questao22.Resposta" value="Nao">
+                                Não
+                            </label>
+                        </div>
+                    </div>
+
+                    @*  <div class="form-group col-xs-12">
+                <label>Em qual das áreas de mercado abaixo você gostaria de trabalhar conosco em um projeto? *</label>
+                <p>Fique a vontade para escolher mais de uma. =)</p>
+                <div data-ng-repeat="questaoMerc in questaoMercado track by questaoMerc.perguntaCheckId">
+
+                </div>
+                       <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="questaoMerc.selecionado">{{questaoMerc.textoResposta}}</label>
+                    </div>
+            </div>*@
+
+                    <div class="form-group">
+                        <div class="col-xs-offset-4 col-xs-6" style="text-align: right;">
+                            <button type="submit" class="btn " style="background-color:orange !important; color:white !important;">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          
+        </div>
+    </div>
+</div>
+<style>
+        input {
+        height:15px;
+        width:50%;
+        margin-bottom:0px !important;
+    }
+</style>
+
+
+<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<script src="~/app/ConsultorForm/FormApp.js"></script>
+<script src="~/Scripts/angular-messages.min.js"></script>
+<script src="~/app/ConsultorForm/efService.js"></script>
+<script src="~/app/ConsultorForm/EfDirective.js"></script>
+<script src="~/app/ConsultorForm/efController.js"></script>

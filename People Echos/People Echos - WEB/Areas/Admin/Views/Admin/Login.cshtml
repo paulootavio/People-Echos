@@ -1,0 +1,62 @@
+﻿@model HQ_Echos___WEB.Models.LoginModel
+
+<div class="auth-style" style="height:700px;">
+
+    <section id="loginForm">
+
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+
+            <div class="container-fluid">
+                <div class="col-sm-offset-3 col-sm-6 text-center box-selecione">
+
+
+                    <div class="col-sm-offset-3 col-sm-6 text-center box-selecione" style="margin-bottom: 15px;">
+                        <h1 style="font-size: 18px">
+                            <h3><b>Log in</b></h3>
+                        </h1>
+                    </div>
+
+                    <div class="col-sm-12">
+
+                        @Html.TextBoxFor(m => m.UserName, new { @placeholder = "E-MAIL" })
+
+                        @*                    @Html.ValidationMessageFor(m => m.UserName)*@
+
+                    </div>
+                    @*     <div class="col-sm-12">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                        </div>*@
+
+                    <div class="col-sm-12">
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "SENHA" })
+                        @*       @Html.ValidationMessageFor(m => m.Password)*@
+                    </div>
+
+                    <div class="col-sm-12">
+                        <input type="submit" value="ACESSAR CONTA" />
+                    </div>
+                    <div class="col-sm-12">
+                        <p>
+                            @Html.ActionLink("Registrar", "Register"), Caso não tenha uma conta.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        }
+    </section>
+
+</div>
+<style>
+    .auth-style {
+        background-image: url("../Images/box/background.png");
+    }
+
+</style>

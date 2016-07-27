@@ -1,0 +1,204 @@
+﻿@model List<HQ_Echos___WEB.Viewmodels.ViewModelQuestao>
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary()
+
+
+
+
+<div data-ng-app="angularFormApp">
+
+    <div class="col-sm-12" style="padding-left: 0; padding-right: 0;">
+        <img src="../../Images/box/People_Echos_Banners_Parceiro.png" class="banner-cadastro" />
+    </div>
+
+    <div class="container">
+
+         <div class="col-sm-12 text-center">
+            <h1 style="color: #E04600;">Formulário para Parceiro de Projeto</h1>
+        </div>
+
+        <div>
+            <p><b>Um Parceiro de Projetos é aquele que indica um projeto para a Design Echos. Qualquer pessoa pode fazer essa indicação e pode escolher diferentes maneiras de se relacionar com o desenvolvimento do Projeto.</b></p>
+            <p>Esse formulário tem como objetivo pedir mais informações sobre o projeto que você gostaria de nos trazer e avaliar se ele se encaixa nas nossas linhas de trabalho. </p>
+            <p>O seu projeto pode se enquadrar em uma das quatro áreas de projeto que trabalhamos ou pode ser desenvolvido sob medida.</p>
+            <p>
+                1. INOVAÇÃO EM NEGÓCIOS
+Criamos negócios lucrativos, eficientes, criativos e de alto impacto social.
+            </p>
+            <p>
+                2. INOVAÇÃO EM CULTURA E PROPÓSITO
+Ajudamos empresas a identificarem seu propósito de existência, criando uma cultura catalisadora de mudanças.
+            </p>
+            <p>
+                3. INOVAÇÃO EM PRODUTOS E SERVIÇOS
+Desenvolvemos produtos e serviços de valor compartilhado.
+            </p>
+            <p>
+                4. INOVAÇÃO E DESENVOLVIMENTO LOCAL
+Ajudamos governos e empresas a construir sistemas sustentáveis onde todos os atores ganham.
+            </p>
+            <p>
+                MODELO DE NEGÓCIO:
+O parceiro de projeto recebe um contrato de parceria e é remunerado conforme o escopo do projeto que variam entre:
+            </p>
+            <p>De 05 a 15% do resultado do projeto para projetos de inovação, modelos de negócio, workshops, programas de imersão e palestras.</p>
+            <p>De 15 a 30% do resultado do projeto para projetos de inovação social, modelos de negócio de impacto e desenvolvimento local.</p>
+            <p>
+                RESTRIÇÕES PARA PROPOR PROJETOS:
+- Não trabalhamos
+            </p>
+            <p>
+                Concorda com a gente?
+Então preencha esse formulário para nos conhecermos melhor. ;)
+            </p>
+        </div>
+
+        <div class="bs-example" ng-controller="efcontroller">
+           
+            <form data-ng-submit="submit()" method="post" ng-show="loadForm">
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você quer trabalhar como facilitador na Escola Design Thinking? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Como isso dialoga com seus objetivos de carreira e de vida?</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao26.Resposta">{{Questao26.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Como você se descreveria como facilitador e qual a sua experiência como facilitador? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao27.Resposta">{{Questao27.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Para você quais são as atitudes e características de um bom facilitador? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao28.Resposta">{{Questao28.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Por que você se identifica com a nossa cultura? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Imaginamos que você conheça um pouco do Grupo Echos, quais traços do Grupo e da nossa cultura te chamam mais atenção.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao29.Resposta">{{Questao29.Resposta}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Você já fez algum curso da Escola Design Thinking? *</label>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao30.Resposta">{{Questao30.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <label>Se você respondeu sim na resposta anterior qual (ou quais) curso(s) você fez conosco?</label>
+                    <div data-ng-repeat="questaoEDT in questaoCursosEDT track by questaoEDT.perguntaCheckId">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="true" ng-model="questaoEDT.selecionado">{{questaoEDT.textoResposta}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">E em quais áreas você é um curioso profissional? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Na pergunta anterior você elencou o que você já trabalhou, nessa elenque aquelas em que você tem muito interesse e pesquisa muito sobre.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao34.Resposta">{{Questao34.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Sua Formação Acadêmica *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Graduação em diante</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao35.Resposta">{{Questao35.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Cursos e Certificados complementares</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Coloque um por linha por favor.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao36.Resposta">{{Questao36.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-12 ">
+                        <label class="control-label right">Quais foram suas 3 últimas experiências profissionais (incluindo atual, se houver)? *</label>
+                    </div>
+                    <div class="col-xs-12 ">
+                        <p class="">Por favor, coloque os cargos ou posições em bullet points e uma breve explicação abaixo de cada uma dessas posições.</p>
+                    </div>
+                    <div class="col-xs-10">
+                        <textarea class="form-control" rows="3" ng-model="Questao37.Resposta">{{Questao37.Resposta}}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-inline col-xs-12">
+                    <label>Disponibilidade para Viagens? *</label>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao38.Resposta" value="Sim">
+                            Sim
+                        </label>
+                    </div>
+                    <br />
+                    <div class="radio">
+                        <label>
+                            <input type="radio" style="width: 15px !important;" ng-model="Questao38.Resposta" value="Nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-10" style="text-align: right;">
+                        <button type="submit" class="btn " style="background-color:orange !important; color:white !important;">Salvar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    input {
+    height:15px;
+    width:50%;
+    margin-bottom:0px !important;
+}
+</style>        
+
+<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<script src="~/app/ParceiroProjeto/FormApp.js"></script>
+<script src="~/app/ParceiroProjeto/efService.js"></script>
+<script src="~/app/ParceiroProjeto/efController.js"></script>

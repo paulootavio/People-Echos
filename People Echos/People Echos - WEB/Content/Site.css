@@ -1,0 +1,19 @@
+﻿    @font-face {
+    font-family:klavica-bold;
+    src:url(../../fonts/KlavikaBoldBold.otf)
+    }
+    .text-banner {
+        font-family:klavica-bold;;
+    }
+input {
+    height:30px;
+    width:50%;
+    margin-bottom:10px !important;
+}
+.banner-cadastro {
+width:100% !important;
+
+}
+.no-padding {
+padding:0 !important;
+}

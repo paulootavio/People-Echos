@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Filtros";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@Html.AntiForgeryToken()
+@Html.ValidationSummary()
+<div data-ng-app="angularFormApp">
+    <div class="bs-example" ng-controller="efcontroller">
+
+        <!--Buscar Tipo de fichas-->
+        <!--Questoes da ficha-->
+        <!--Buscar por palavra chave FIIM->
+               <!--Questoes check-->
+        <!--Buscar respostas check Fim-->
+        <!--Retorno Fichas-->
+        <div class="col-md-12">
+            <div class="col-md-5">
+                <select name="tipoFichas" ng-options="tipoficha as tipoficha.nomeAvaliacao for tipoficha in listTipoFichas track by tipoficha.idAvaliacao" ng-change="fcTipoFichaSelecionada(tipofichaselecionada)" ng-model="tipofichaselecionada">
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-5">
+                <select name="questao" ng-options="questao as questao.Nome for questao in listQuestoes track by questao.idQuestao" ng-disabled="isQuestoes" ng-model="questaoSelecionada">
+                    <option value="">Selecione</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-5">
+                <input type="text" ng-model="resposta" placeholder="reposta a ser pesquisada" />
+            </div>
+            <div class="col-md-5">
+                <button type="button" class="btn btn-info" ng-click="buscarResposta(questaoSelecionada.idQuestao, resposta)">Pesquisar Resposta</button>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+            <div class="container" ng-show="isVisibletableUsers">
+                 <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="pessoa in listPessoas">
+                        <tr>
+                            <td>{{pessoa}}!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @*   <select name="quetoesCheck">
+             <option value="">Selecione</option>
+            <option value="volvo">Volvo XC90</option>
+            <option value="saab">Saab 95</option>
+            <option value="mercedes">Mercedes SLK</option>
+            <option value="audi">Audi TT</option>
+        </select>
+
+         <select name="quetoesCheck">
+             <option value="">Selecione</option>
+            <option value="volvo">Volvo XC90</option>
+            <option value="saab">Saab 95</option>
+            <option value="mercedes">Mercedes SLK</option>
+            <option value="audi">Audi TT</option>
+        </select>
+
+        <button type="button" class="btn btn-info">Buscar</button>*@
+
+
+        <!--Retorno fichas-->
+    </div>
+
+</div>
+
+<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<script src="~/app/Filtros/FormApp.js"></script>
+<script src="~/app/Filtros/efService.js"></script>
+<script src="~/app/Filtros/efController.js"></script>

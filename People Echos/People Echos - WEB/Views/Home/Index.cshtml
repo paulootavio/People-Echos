@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<div > 
+<div class="container-fluid box-image" id="containter"style="margin: 0; padding: 0;">
+    <div class="col-sm-offset-3 col-sm-6 text-banner" >
+            <center><h1 style="color:white;" id="titulo-banner">PEOPLE ECHOS</h1></center>
+            <center><p style="color:white;">uma rede de inovadores do bem engajados com o nosso propósito e essência!</p></center>
+        @*<center><input type="button" value="CADASTRE-SE" /></center>*@
+    </div>
+
+   @* <img style="width: 99vw; height: 40vw;" src="../Images/Icon/People_Echos_Banners-Home.png" />*@
+
+</div>
+<div class="container" style="padding: 50px 15px;">
+    <div class="col-sm-6">
+
+        <div class="col-sm-12">
+            <p>
+                <b>Acreditamos que a abertura é o novo paradigma
+                  para fomentar inovação, por isso criamos o People Echos,
+                inovadores do bem engajados com o nosso propósito e essência.
+                </b>
+            </p>
+        </div>
+
+        <div class="col-sm-12">
+            <p>
+                Seu objetivo é fomentar o ecossitema de inovação e a geração
+               de sistemas onde todos ganham. Acreditamos que juntos
+               podemos fazer negócios melhores, por isso é tão importante termos
+               diferentes perspectivas backgrounds na nossa rede.
+
+            </p>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="col-sm-12">
+            <p>
+                Hoje o modelo de trabalho mudou, está cada vez mais livre e dinânmico,
+                o que faz com que as pessoas possam se conectar com seus propósitos, trabalhando
+                melhor e com mais signficado. Isso gera velor para quem trabalha, para as relações
+                e para o que está sendo produzido.
+            </p>
+        </div>
+        <div class="col-sm-12">
+            <p>
+                Com uma rede crescente de inovadores do bem acreditamos que o nosso pontencial
+                cirativ o e inovador é exponencial e que assim poderemos resover os problemas mais complexos
+                do brasil e do mundo!
+
+            </p>
+        </div>
+    </div>
+      <div class="container-fluid" data-ng-controller="appHomeController">
+       
+        <div class="col-sm-offset-3 col-sm-6 text-center box-selecione" style="margin-bottom:15px;">
+                      <h1 style="font-size: 18px">ESCOLHA UM PERFIL E FAÇA PARTE DESSA REDE:</h1>
+        </div>
+ 
+        <div class="col-xs-12 col-md-4" >
+                <button class="nostyle link-box" onclick="consultor()" href="/Account/Register"  style="text-decoration: none !important;">
+                   <img src="../../Images/box/People_Echos_logo_consultor.png"/ style="width:67px;height:auto;">
+                    Consultor
+                </button>         
+        </div>
+
+        <div class="col-xs-12 col-md-4"">
+                 <button class="nostyle link-box"  onclick="facilitador()" style="text-decoration: none !important;">
+                  <img src="../../Images/box/People_Echos_logo_facilitador.png"/ style="width:67px;height:auto;">                                          
+                      Facilitador
+                </button>          
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+                  <button class="nostyle link-box" onclick="apredizagem()" style="text-decoration: none !important;">
+                  <img src="../../Images/box/People_Echos_logo_articulardor.png"/ style="width:67px;height:auto;">
+                      Aprendizagem
+                </button> 
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+                  <button class="nostyle link-box"  onclick="parceiro()" style="text-decoration: none !important;">
+                  <img src="../../Images/box/People_Echos_logo_Parceiro.png"/ style="width:67px;height:auto;">
+                    Parceiro Projeto
+                </button> 
+        </div>
+
+    </div>
+    </div>
+    <style>
+        .box-selecione {
+            font-size: 18px;
+            border-top: solid;
+            border-bottom: solid;
+            color: orange;
+            margin-top: 15px;
+        }
+        .botao {
+            background-image:url("../Images/box/box-consultor.png");
+            width:100%;
+            height:50%;
+            }
+        .box-image {
+         width:100%;
+        height:40vw;
+           
+        background: url("../Images/Icon/People_Echos_Banners-Home.png");
+
+        background-size:100% auto;
+ 
+        }
+        #text-banner {
+        padding-left:40%;
+        }
+        #containter {
+            display: flex;
+            /* flex-direction: column;*/
+            align-items: center; 
+            /* justify-content: center;*/
+        }
+ 
+    .Box-Index-Auth {
+        height: 100px;
+        border: 1px solid #0C0C0C;
+        background-color: #0C0C0C;
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        text-decoration: none !important;
+    }
+
+        .Box-Index-Auth:hover {
+            background-color: #292929;
+        }
+
+     .link-box {
+        width: 100%;
+        text-decoration: none !important;
+        height: 100px;
+        border: 1px solid #0C0C0C;
+        background-color: #0C0C0C;
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+     .box-selecione {
+            font-size: 18px;
+            border-top: solid;
+            border-bottom: solid;
+            color: orange;
+            margin-top: 15px;
+        }
+       .link-box:hover {
+            background-color: #292929;
+        }
+        #titulo-banner {
+        font-size: 400%;
+        }
+</style>
+<script>
+    function consultor()
+    {
+        var url = '@Url.Action("Cadastro", "Consultor")';
+        document.location.href = url;
+    }
+    function parceiro() {
+        var url = '@Url.Action("Cadastro", "parceiro")';
+          document.location.href = url;
+    }
+    function apredizagem() {
+        var url = '@Url.Action("Cadastro", "apredizagem")';
+          document.location.href = url;
+    }
+    function facilitador() {
+        var url = '@Url.Action("Cadastro", "facilitador")';
+          document.location.href = url;
+    }
+</script>
